@@ -62,3 +62,4 @@ local.properties
 
 
 WSO2UnitTest/target/*
+WSO2UnitTestMediator/target/*
