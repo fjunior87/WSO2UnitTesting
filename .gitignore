@@ -59,3 +59,6 @@ local.properties
 *.car
 *.jar
 *.class
+
+
+WSO2UnitTest/target/*
