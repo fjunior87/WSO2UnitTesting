@@ -1,4 +1,4 @@
-#WSO2UnitTest
+# WSO2UnitTest
 
 This project's intention is to allow a way the developers to create unit tests for their WSO2 ESB Projects. 
 This project considers a sequence as an unit to be tested. 
