@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="WSO2UnitTestAPI" groupId="com.xicojunior.wso2.unittest.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/WSO2UnitTestAPI.xml</file>
+    </artifact>
+</artifacts>
