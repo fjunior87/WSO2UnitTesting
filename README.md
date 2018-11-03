@@ -7,6 +7,11 @@ This Project was inspired by this [blog post](http://rogervdkimmenade.blogspot.c
 
 WSO2 provides a Test Automation Framework, but the documentation is not very clear (in my point of view) and seems a little bit complex.
 
+## Tested On
+
+* WSO2 EI 6.1.0
+
+
 ## How To Install
 
 In order to use the Utilty API, we need to build the car file and deploy it to the WSO2 ESB/EI server.
