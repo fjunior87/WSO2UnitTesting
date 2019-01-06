@@ -10,21 +10,28 @@ import java.util.List;
 public class Payload {
 
 	private String payload;
-	private String type;
+	private String requestType;
+	private String responseType;
 	private List<Property> properties;
 	private List<String> sequences;
 	
 	public String getPayload() {
 		return payload;
 	}
+	public String getResponseType() {
+		return responseType;
+	}
+	public void setResponseType(String responseType) {
+		this.responseType = responseType;
+	}
 	public void setPayload(String payload) {
 		this.payload = payload;
 	}
-	public String getType() {
-		return type;
+	public String getRequestType() {
+		return requestType;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setRequestType(String requestType) {
+		this.requestType = requestType;
 	}
 	public List<Property> getProperties() {
 		return properties;
@@ -38,9 +45,6 @@ public class Payload {
 	public void setSequences(List<String> sequences) {
 		this.sequences = sequences;
 	}
-
-	
-	
 	
 	
 }

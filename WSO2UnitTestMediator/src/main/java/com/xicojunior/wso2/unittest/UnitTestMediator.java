@@ -57,11 +57,11 @@ public class UnitTestMediator extends AbstractMediator {
 			String payloadString = getJSONPayload(context);
 			context.setProperty(REQUEST_PAYLOAD, payloadString);
 			payload = jsonParser.getPayload(payloadString);
-			context.setProperty(PAYLOAD_TYPE, payload.getType());
+			context.setProperty(PAYLOAD_TYPE, payload.getRequestType());
 			context.setProperty(TEST_SEQUENCE_NAME, payload.getSequences().get(0));
 
 			addProperties(context, payload.getProperties());
-			if (JSON.equals(payload.getType())) {
+			if (JSON.equals(payload.getRequestType())) {
 				try {
 					setJSONPayload(context, payload.getPayload());
 				} catch (AxisFault e) {
@@ -69,7 +69,7 @@ public class UnitTestMediator extends AbstractMediator {
 					return true;
 				}
 			}
-			if (XML.equals(payload.getType())) {
+			if (XML.equals(payload.getRequestType())) {
 				try {
 					System.out.println(payload.getPayload());
 					setXMLPayload(context, payload.getPayload());
@@ -85,10 +85,10 @@ public class UnitTestMediator extends AbstractMediator {
 			payload = jsonParser.getPayload(jsonRequestPayload);
 			payload.setProperties(getResponseProperties(context));
 
-			if (JSON.equals(payload.getType())) {
+			if (JSON.equals(payload.getResponseType())) {
 				payload.setPayload(getJSONPayload(context));
 			}
-			if (XML.equals(payload.getType())) {
+			if (XML.equals(payload.getResponseType())) {
 				payload.setPayload(context.getEnvelope().getBody().getFirstElement().toString());
 			}
 			try {

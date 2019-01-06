@@ -14,11 +14,11 @@ public class JSONParserTest {
 
 	@Test
 	public void testJsonParser() {
-		String payload = "{\r\n    \"payload\" : \"<abc><text>123</text></abc>\",\r\n    \"type\": \"xml\",\r\n    \"properties\": [\r\n        {\r\n            \"name\":\"PROP1\",\r\n            \"value\": \"ABC\",\r\n            \"scope\": \"\",\r\n            \"type\":\"\"\r\n        }\r\n    ],    \"sequences\": [\r\n        \"SequenceForTest\"\r\n    ]\r\n}";
+		String payload = "{\r\n    \"payload\" : \"<abc><text>123</text></abc>\",\r\n    \"requestType\": \"xml\",\r\n    \"properties\": [\r\n        {\r\n            \"name\":\"PROP1\",\r\n            \"value\": \"ABC\",\r\n            \"scope\": \"\",\r\n            \"type\":\"\"\r\n        }\r\n    ],    \"sequences\": [\r\n        \"SequenceForTest\"\r\n    ]\r\n}";
 		Payload p = new JsonParser().getPayload(payload);
 		
 		assertNotNull("Payload Object Should not be null", p);
-		assertEquals("Payload Type should be xml","xml", p.getType());
+		assertEquals("Payload Type should be xml","xml", p.getRequestType());
 		
 		assertNotNull("Properties Should not be null", p.getProperties());
 		
@@ -37,7 +37,7 @@ public class JSONParserTest {
 	@Test
 	public void testJsonWriteString() {
 		
-		String payload = "{\r\n    \"payload\" : \"<abc><text>123</text></abc>\",\r\n    \"type\": \"xml\",\r\n    \"properties\": [\r\n        {\r\n            \"name\":\"PROP1\",\r\n            \"value\": \"ABC\",\r\n            \"scope\": \"\",\r\n            \"type\":\"\"\r\n        }\r\n    ],\r\n    \r\n    \"sequences\": [\r\n        \"SequenceForTest\"\r\n    ]\r\n}";
+		String payload = "{\r\n    \"payload\" : \"<abc><text>123</text></abc>\",\r\n    \"requestType\": \"xml\",\r\n    \"properties\": [\r\n        {\r\n            \"name\":\"PROP1\",\r\n            \"value\": \"ABC\",\r\n            \"scope\": \"\",\r\n            \"type\":\"\"\r\n        }\r\n    ],\r\n    \r\n    \"sequences\": [\r\n        \"SequenceForTest\"\r\n    ]\r\n}";
 		Payload p = new JsonParser().getPayload(payload);
 		
 		System.out.println(new JsonParser().getPayloadString(p));

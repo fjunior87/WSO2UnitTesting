@@ -38,7 +38,8 @@ The API expects only HTTP POST requests with a JSON Payload similar to the one b
 
 	{
     "payload" : "<abc xmlns=\"http://www.abc.com\"><text>123</text></abc>",
-    "type": "xml",
+    "requestType": "xml",
+	"responseType": "xml"
     "properties": [
         {
             "name":"PROP1",
@@ -56,7 +57,8 @@ The API expects only HTTP POST requests with a JSON Payload similar to the one b
 It is a simple JSON with the following properties:
 
 * **payload**: The Payload that will be handled by the sequence that will be executed;
-* **type**: The type of the payload. It can be xml or json;
+* **requestType**: The type of the request payload. It can be xml or json;
+* **responseType**: The type of the response payload. It can be xml or json;
 * **properties**: An array of the properties that are used inside the sequence;
 * **sequences**: An array of the sequences to be executed. **For this initial version it allows only one sequence**; 
 
@@ -71,7 +73,8 @@ This API will provide a response like below:
 
 	{
 	    "payload": "<abc xmlns=\"http://www.abc.com\"><text>123</text></abc>",
-	    "type": "xml",
+	    "requestType": "xml",
+		"responseType": "xml",
 	    "properties": [
 	        {
 	            "name": "PROP1",
@@ -110,4 +113,4 @@ We can use for example Postman to create requests and tests;
 
 ## Disclaimer
 
-This project is not a replacement to WSO2 TAF, it was just an easier way I found to test my sequences;
+This project is not a replacement to WSO2 TAF, it was just another way I found to test the sequences of the projects;
