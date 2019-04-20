@@ -29,7 +29,17 @@
             <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
             <respond/>
         </inSequence>
-        <outSequence/>
-        <faultSequence/>
+        <outSequence>
+        	<property name="TEST_ACTION" scope="default" type="STRING" value="POST_PROCESS"/>
+            <class name="com.xicojunior.wso2.unittest.UnitTestMediator"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <respond/>
+        </outSequence>
+        <faultSequence>
+        	<property name="TEST_ACTION" scope="default" type="STRING" value="POST_PROCESS"/>
+            <class name="com.xicojunior.wso2.unittest.UnitTestMediator"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <respond/>
+        </faultSequence>
     </resource>
 </api>

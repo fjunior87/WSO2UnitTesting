@@ -11,6 +11,7 @@ import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.axis2.AxisFault;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.commons.json.JsonUtil;
 import org.apache.synapse.core.axis2.Axis2MessageContext;
@@ -61,24 +62,27 @@ public class UnitTestMediator extends AbstractMediator {
 			context.setProperty(TEST_SEQUENCE_NAME, payload.getSequences().get(0));
 
 			addProperties(context, payload.getProperties());
-			if (JSON.equals(payload.getRequestType())) {
-				try {
-					setJSONPayload(context, payload.getPayload());
-				} catch (AxisFault e) {
-					log.error("Error While Setting the JSON Payload", e);
-					return true;
+			if(StringUtils.isNotEmpty(payload.getPayload())) {
+				if (JSON.equals(payload.getRequestType())) {
+					try {
+						setJSONPayload(context, payload.getPayload());
+					} catch (AxisFault e) {
+						log.error("Error While Setting the JSON Payload", e);
+						return true;
+					}
 				}
-			}
-			if (XML.equals(payload.getRequestType())) {
-				try {
-					System.out.println(payload.getPayload());
-					setXMLPayload(context, payload.getPayload());
-				} catch (XMLStreamException e) {
-					log.error("Error While Setting the XML Payload", e);
-					return true;
+				if (XML.equals(payload.getRequestType())) {
+					try {
+						System.out.println(payload.getPayload());
+						setXMLPayload(context, payload.getPayload());
+					} catch (XMLStreamException e) {
+						log.error("Error While Setting the XML Payload", e);
+						return true;
+					}
 				}
-			}
 
+			}
+			
 		}
 		if (action.equals(POST_PROCESS_ACTION)) {
 			String jsonRequestPayload = context.getProperty(REQUEST_PAYLOAD).toString();

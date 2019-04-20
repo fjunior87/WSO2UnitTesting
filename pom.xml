@@ -1,18 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.xicojunior.wso2.unittest</groupId>
   <artifactId>WSO2UnitTestParent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-
   <name>WSO2UnitTestParent</name>
   <url>http://maven.apache.org</url>
   <modules>
-  	<module>WSO2UnitTest</module>
-  	<module>WSO2UnitTestMediator</module>
-  	<module>WSO2UnitTestCompositeApplication</module>
+    <module>WSO2UnitTest</module>
+    <module>WSO2UnitTestMediator</module>
+    <module>WSO2UnitTestCompositeApplication</module>
   </modules>
   <build>
     <plugins>
